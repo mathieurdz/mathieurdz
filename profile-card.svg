@@ -1,67 +1,137 @@
-<!-- ===== CÓDIGO CORREGIDO Y 100% FUNCIONAL ===== -->
+<!-- ===== CÓDIGO CORREGIDO Y COMENTADO ===== -->
 <svg width="850" height="400" viewBox="0 0 850 400" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Mathieuz Rdz - Interactive HUB</title>
+    <!-- 
+    ========================================================================
+    SECCIÓN 1: <defs> (LA CAJA DE HERRAMIENTAS)
+    Aquí definimos elementos que reutilizaremos después. Es como preparar
+    los ingredientes antes de cocinar.
+    ========================================================================
+    -->
     <defs>
+        <!-- Filtro para el brillo verde. Crea una "sombra" de color verde neón. -->
         <filter id="neon-glow" x="-150%" y="-150%" width="300%" height="300%">
             <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#39ff14" flood-opacity="0.9"/>
         </filter>
+        <!-- Patrón de rejilla. Es una pequeña imagen de 40x40px que se repite para llenar el fondo. -->
         <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
             <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(57, 255, 20, 0.1)" stroke-width="1"/>
         </pattern>
+        <!-- Máscara hexagonal. Es como un "cortador de galletas" para que tu avatar tenga forma de hexágono. -->
         <clipPath id="hexClip">
             <path d="M 125, 30 L 75, 30 L 50, 75 L 75, 120 L 125, 120 L 150, 75 Z"/>
         </clipPath>
     </defs>
 
+    <!-- 
+    ========================================================================
+    SECCIÓN 2: <style> (EL CEREBRO CSS)
+    Aquí vive toda la magia de las animaciones y los estilos.
+    ========================================================================
+    -->
     <style>
+        /* Animación para que el fondo de rejilla se mueva infinitamente. */
         @keyframes scroll-grid {
             0% { transform: translate(0, 0); }
             100% { transform: translate(-40px, -40px); }
         }
         .grid-background { animation: scroll-grid 4s linear infinite; }
+
+        /* Estilos de los "satélites" (iconos hexagonales). */
         .satellite .bg { stroke: #8b5cf6; stroke-width: 1.5; fill: rgba(23, 28, 44, 0.7); transition: all 0.3s ease-in-out; }
         .satellite .icon { fill: #a0aec0; transition: fill 0.3s ease-in-out; }
-        .satellite .connection-line { stroke: #39ff14; stroke-width: 1; opacity: 0; transition: opacity 0.3s ease-in-out; }
-        .central-avatar-border { stroke: #8b5cf6; stroke-width: 2.5; fill: none; transition: filter 0.3s ease; }
-        .satellite:hover .bg { stroke: #39ff14; transform: scale(1.1); }
-        .satellite:hover .icon { fill: #ffffff; }
-        .satellite:hover ~ .central-avatar-border,
-        .satellite:hover .connection-line { opacity: 1; filter: url(#neon-glow); }
         
+        /* La línea de conexión, invisible por defecto (opacity: 0). */
+        .satellite .connection-line { stroke: #39ff14; stroke-width: 1; opacity: 0; transition: opacity 0.3s ease-in-out; }
+        
+        /* Borde del avatar central. */
+        .central-avatar-border { stroke: #8b5cf6; stroke-width: 2.5; fill: none; transition: filter 0.3s ease; }
+
+        /* Magia del HOVER: Cuando pasas el ratón sobre un satélite... */
+        .satellite:hover .bg { 
+            stroke: #39ff14;         /* El borde del hexágono se vuelve verde. */
+            transform: scale(1.1);   /* El hexágono se hace más grande. */
+        }
+        .satellite:hover .icon { fill: #ffffff; } /* El icono se vuelve blanco. */
+
+        /* Esta es la parte más compleja: Cuando pasas el ratón sobre un satélite... */
+        .satellite:hover ~ .central-avatar-border, /* ...el borde del avatar central... */
+        .satellite:hover .connection-line {       /* ...Y la línea de conexión de ESE satélite... */
+            opacity: 1;                            /* ...se hacen visibles... */
+            filter: url(#neon-glow);               /* ...y se les aplica el brillo verde. */
+        }
+        
+        /* Estilos de la barra inferior. */
         .bottom-bar { fill: rgba(13, 17, 23, 0.7); }
         .name-text { font: 600 28px sans-serif; fill: #e5e7eb; }
         .title-text { font: 400 16px sans-serif; fill: #8b5cf6; }
-        /* CORREGIDO: Se elimina la animación de typing y se usa una clase simple */
         .status-text { font: 500 14px 'Fira Code', 'Courier New', monospace; fill: #39ff14; }
     </style>
 
+    <!-- 
+    ========================================================================
+    SECCIÓN 3: EL CUERPO DEL SVG (LOS BLOQUES DE CONSTRUCCIÓN)
+    Aquí dibujamos los elementos en orden, de atrás hacia adelante.
+    ========================================================================
+    -->
+
+    <!-- CAPA 1: Fondos -->
     <rect width="100%" height="100%" fill="#0d1117" />
     <rect width="110%" height="110%" x="-5%" y="-5%" fill="url(#grid)" class="grid-background" />
 
+    <!-- CAPA 2: El Hub de Interacción (un grupo <g> que contiene todo lo de arriba) -->
     <g transform="translate(325, 60)">
-        <!-- 1. CAMBIA LA URL DE TU AVATAR -->
+        
+        <!-- [MODIFICABLE] Avatar -->
         <image xlink:href="https://avatars.githubusercontent.com/u/1024025?v=4" x="50" y="30" height="90" width="90" clip-path="url(#hexClip)" />
         
-        <!-- 2. CAMBIA TUS ENLACES Y LOS ICONOS SI QUIERES -->
+        <!-- Los Satélites. Cada uno es un grupo <g> dentro de un enlace <a> -->
+        
+        <!-- SATÉLITE 1: GitHub -->
         <a xlink:href="https://github.com/mathieuz-rdz" target="_blank" class="satellite">
-            <line class="connection-line" x1="100" y1="75" x2="35" y2="35" /><g transform="translate(0, 0)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" /><path class="icon" transform="translate(5, 7) scale(0.8)" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C22.562 19.81 24 16.225 24 12 24 5.373 18.627 0 12 0z"/></g>
+            <line class="connection-line" x1="100" y1="75" x2="35" y2="35" />
+            <g transform="translate(0, 0)">
+                <path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <path class="icon" transform="translate(5, 7) scale(0.8)" d="M12 0c-6.626 0-12 5.373-12 12..."/>
+            </g>
         </a>
+        <!-- SATÉLITE 2: LinkedIn -->
         <a xlink:href="https://linkedin.com/in/mathieuz-rdz" target="_blank" class="satellite">
-            <line class="connection-line" x1="100" y1="75" x2="35" y2="115" /><g transform="translate(0, 80)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" /><path class="icon" transform="translate(5, 7) scale(0.8)" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764S7.466 6.732 6.5 6.732zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></g>
+            <line class="connection-line" x1="100" y1="75" x2="35" y2="115" />
+            <g transform="translate(0, 80)">
+                <path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <path class="icon" transform="translate(5, 7) scale(0.8)" d="M19 0h-14c-2.761 0-5 2.239-5 5..."/>
+            </g>
         </a>
+        <!-- SATÉLITE 3: Twitter/X -->
         <a xlink:href="https://twitter.com/mathieuz_rdz" target="_blank" class="satellite">
-            <line class="connection-line" x1="100" y1="75" x2="165" y2="35" /><g transform="translate(130, 0)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" /><path class="icon" transform="translate(5, 7) scale(0.8)" d="m18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.62l-5.21-6.817L4.99 21.75H1.68l7.73-8.835L1 2.25h6.784l4.72 6.23zM17.06 19.75h1.693L7.045 4.125H5.21l11.85 15.625z"/></g>
+            <line class="connection-line" x1="100" y1="75" x2="165" y2="35" />
+            <g transform="translate(130, 0)">
+                <path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <path class="icon" transform="translate(5, 7) scale(0.8)" d="m18.244 2.25h3.308l-7.227 8.26..."/>
+            </g>
         </a>
+        <!-- SATÉLITE 4: Mail (¡CORREGIDO!) -->
         <a xlink:href="mailto:mathieuz.dev@gmail.com" target="_blank" class="satellite">
-            <line class="connection-line" x1="100" y1="75" x2="165" y2="115" /><g transform="translate(130, 80)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" /><path class="icon" transform="translate(5, 7) scale(0.8)" d="M0 3v18h24V3H0zm21.518 2L12 10.428 2.482 5h19.036zM2 19V6.253l10 7.773 10-7.773V19H2z"/></g>
+            <!-- La línea ahora apunta a la nueva posición -->
+            <line class="connection-line" x1="100" y1="75" x2="165" y2="115" /> 
+            <!-- Se ha movido más a la derecha. Antes era (130, 80) ahora es (170, 80) -->
+            <g transform="translate(170, 80)"> 
+                <path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <path class="icon" transform="translate(5, 7) scale(0.8)" d="M0 3v18h24V3H0..."/>
+            </g>
         </a>
+        
+        <!-- Borde del Avatar Central (se dibuja encima de todo lo demás para que brille correctamente) -->
         <path class="central-avatar-border" d="M 125, 30 L 75, 30 L 50, 75 L 75, 120 L 125, 120 L 150, 75 Z"/>
     </g>
+
+    <!-- CAPA 3: La Barra Inferior (otro grupo <g> independiente) -->
     <g transform="translate(40, 300)">
         <rect class="bottom-bar" width="770" height="80" rx="10" />
+        
+        <!-- [MODIFICABLE] Textos -->
         <text x="20" y="35" class="name-text">MATHIEUZ RDZ</text>
-        <text x="20" y="60" class="title-text">Low-Level Code Alchemist &amp; Systems Programmer</text>
-        <!-- CORREGIDO: Se reemplaza foreignObject por un <text> estándar -->
+        <text x="20" y="60" class="title-text">Low-Level Code Alchemist & Systems Programmer</text>
         <text x="430" y="55" class="status-text">> SYSTEM_STATUS: ALL_GREEN_</text>
     </g>
 </svg>
