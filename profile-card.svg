@@ -1,135 +1,38 @@
-<!-- ===== CÓDIGO NUEVO Y COMPLEJO para profile-card.svg ===== -->
+<!-- ===== CÓDIGO FINAL para profile-card.svg ===== -->
 <svg width="850" height="420" viewBox="0 0 850 420" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Mathieuz Rdz's Interactive Profile</title>
-    <desc>A modular and animated profile card with multiple components and links.</desc>
-
     <defs>
-        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#101219"/>
-            <stop offset="100%" stop-color="#0d1117"/>
-        </linearGradient>
-        <filter id="glow" x="-150%" y="-150%" width="300%" height="300%">
-            <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#39ff14" flood-opacity="0.8"/>
-        </filter>
+        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#101219"/><stop offset="100%" stop-color="#0d1117"/></linearGradient>
+        <filter id="glow" x="-150%" y="-150%" width="300%" height="300%"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#39ff14" flood-opacity="0.8"/></filter>
         <clipPath id="avatarClip"><circle cx="150" cy="130" r="70"/></clipPath>
-        
-        <!-- Patrón de rejilla sutil para el fondo -->
-        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(128,128,128,0.1)" stroke-width="1"/>
-        </pattern>
+        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(128,128,128,0.1)" stroke-width="1"/></pattern>
     </defs>
-
-    <style>
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideUp { from { transform: translateY(20px); opacity:0; } to { transform: translateY(0); opacity: 1; } }
-
-        .container {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, sans-serif;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        /* --- Estilos de la Sección de Perfil (Izquierda) --- */
-        .profile-name { font: 600 34px sans-serif; fill: #e5e7eb; animation: slideUp 0.6s ease-out forwards; }
-        .profile-username { font: 500 20px sans-serif; fill: #8b5cf6; animation: slideUp 0.7s ease-out forwards; }
-        .profile-bio { font: 400 15px sans-serif; fill: #a0aec0; }
-        .bio-line { animation: slideUp 0.8s ease-out forwards; }
-
-        /* --- Estilos de los Componentes (Derecha) --- */
-        .component-card {
-            cursor: pointer;
-            animation: slideUp 0.5s ease-out forwards;
-            opacity: 0; /* Empieza invisible para la animación */
-        }
-        .component-bg {
-            fill: #171c2c;
-            stroke: #373b4d;
-            stroke-width: 1;
-            rx: 10;
-            transition: all 0.3s ease;
-        }
-        .component-card:hover .component-bg {
-            transform: translateY(-5px);
-            stroke: #39ff14;
-            filter: url(#glow);
-        }
-        .component-title {
-            font: 600 18px sans-serif;
-            fill: #cdd6f4;
-            transition: fill 0.3s ease;
-        }
-        .component-card:hover .component-title { fill: #39ff14; }
-        .component-icon {
-            fill: #8b5cf6;
-            transition: all 0.3s ease;
-        }
-        .component-card:hover .component-icon {
-            fill: #39ff14;
-            transform: scale(1.1) rotate(-5deg);
-        }
-    </style>
-
-    <!-- Fondo principal -->
-    <rect width="850" height="420" fill="url(#bg-gradient)" rx="15"/>
-    <rect width="850" height="420" fill="url(#grid)" rx="15"/>
-    <rect width="849" height="419" x="0.5" y="0.5" rx="14.5" fill="none" stroke="#373b4d" stroke-opacity="0.5"/>
-    
+    <style>@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}.container{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,sans-serif;animation:fadeIn .8s ease-out}.profile-name{font:600 34px sans-serif;fill:#e5e7eb;animation:slideUp .6s ease-out forwards}.profile-username{font:500 20px sans-serif;fill:#8b5cf6;animation:slideUp .7s ease-out forwards}.profile-bio{font:400 15px sans-serif;fill:#a0aec0}.bio-line{animation:slideUp .8s ease-out forwards}.component-card{cursor:pointer;animation:slideUp .5s ease-out forwards;opacity:0}.component-bg{fill:#171c2c;stroke:#373b4d;stroke-width:1;rx:10;transition:all .3s ease}.component-card:hover .component-bg{transform:translateY(-5px);stroke:#39ff14;filter:url(#glow)}.component-title{font:600 18px sans-serif;fill:#cdd6f4;transition:fill .3s ease}.component-card:hover .component-title{fill:#39ff14}.component-icon{fill:#8b5cf6;transition:all .3s ease}.component-card:hover .component-icon{fill:#39ff14;transform:scale(1.1) rotate(-5deg)}</style>
+    <rect width="850" height="420" fill="url(#bg-gradient)" rx="15"/><rect width="850" height="420" fill="url(#grid)" rx="15"/><rect width="849" height="419" x=".5" y=".5" rx="14.5" fill="none" stroke="#373b4d" stroke-opacity=".5"/>
     <g class="container">
-        
-        <!-- ============================= -->
-        <!--  SECCIÓN DE PERFIL (IZQUIERDA)  -->
-        <!-- ============================= -->
         <g id="profile-section">
             <!-- 1. CAMBIA LA URL DE TU AVATAR -->
             <image xlink:href="https://avatars.githubusercontent.com/u/1024025?v=4" width="140" height="140" x="80" y="60" clip-path="url(#avatarClip)"/>
-            <circle cx="150" cy="130" r="72" fill="none" stroke="#8b5cf6" stroke-width="2" style="animation: fadeIn 1.2s ease-out forwards;"/>
-
+            <circle cx="150" cy="130" r="72" fill="none" stroke="#8b5cf6" stroke-width="2" style="animation:fadeIn 1.2s ease-out forwards"/>
             <!-- 2. CAMBIA TUS TEXTOS PERSONALES -->
-            <text x="50" y="260" class="profile-name">MATHIEUZ RDZ</text>
-            <text x="50" y="290" class="profile-username">@mathieuz-rdz</text>
-            <text x="50" y="325" class="profile-bio bio-line" style="animation-delay: 0.1s;">Low-Level Code Alchemist & Enthusiast.</text>
-            <text x="50" y="345" class="profile-bio bio-line" style="animation-delay: 0.2s;">Transforming caffeine into elegant code.</text>
+            <text x="50" y="260" class="profile-name">MATHIEUZ RDZ</text><text x="50" y="290" class="profile-username">@mathieuz-rdz</text>
+            <text x="50" y="325" class="profile-bio bio-line" style="animation-delay:.1s">Low-Level Code Alchemist &amp; Enthusiast.</text>
+            <text x="50" y="345" class="profile-bio bio-line" style="animation-delay:.2s">Transforming caffeine into elegant code.</text>
         </g>
-
-        <!-- =============================== -->
-        <!--  SECCIÓN DE COMPONENTES (DERECHA)  -->
-        <!-- =============================== -->
         <g id="components-section" transform="translate(320, 50)">
-
-            <!--
-            INSTRUCCIONES:
-            Para cada componente, cambia lo siguiente:
-            1. El enlace en `xlink:href="TU_ENLACE_AQUI"`
-            2. El texto del título dentro de `<text class="component-title">`
-            3. El ícono (puedes buscar paths de SVG en `svgr.epo.com`)
-            -->
-
-            <!-- COMPONENTE 1: Proyectos Destacados -->
-            <a xlink:href="https://github.com/mathieuz-rdz?tab=repositories" target="_blank" class="component-card" style="animation-delay: 0.3s;">
-                <rect class="component-bg" width="500" height="100" y="0"/>
-                <g transform="translate(20, 20)">
-                    <path class="component-icon" d="M3.9,19.8h16.2c0.6,0,1.2-0.5,1.2-1.2V7.7c0-0.6-0.5-1.2-1.2-1.2H3.9c-0.6,0-1.2,0.5-1.2,1.2v10.9C2.7,19.2,3.2,19.8,3.9,19.8z M9,3.5L7.9,4.8H3.9C3.2,4.8,2.7,5.4,2.7,6v0.5h18.6V6c0-0.6-0.5-1.2-1.2-1.2h-4L15,3.5H9z"/>
-                </g>
+            <!-- 3. CAMBIA TUS ENLACES Y TEXTOS -->
+            <a xlink:href="https://github.com/mathieuz-rdz?tab=repositories" target="_blank" class="component-card" style="animation-delay:.3s">
+                <rect class="component-bg" width="500" height="100" y="0"/><g transform="translate(20, 20)"><path class="component-icon" d="M3.9,19.8h16.2c0.6,0,1.2-0.5,1.2-1.2V7.7c0-0.6-0.5-1.2-1.2-1.2H3.9c-0.6,0-1.2,0.5-1.2,1.2v10.9C2.7,19.2,3.2,19.8,3.9,19.8z M9,3.5L7.9,4.8H3.9C3.2,4.8,2.7,5.4,2.7,6v0.5h18.6V6c0-0.6-0.5-1.2-1.2-1.2h-4L15,3.5H9z"/></g>
                 <text x="70" y="55" class="component-title">Proyectos Destacados</text>
             </a>
-
-            <!-- COMPONENTE 2: Stack Tecnológico -->
-            <a xlink:href="https://github.com/mathieuz-rdz" target="_blank" class="component-card" style="animation-delay: 0.4s;">
-                 <rect class="component-bg" width="500" height="100" y="120"/>
-                 <g transform="translate(20, 140)">
-                    <path class="component-icon" d="M19.5,7.2L13.8,1.5c-0.6-0.6-1.5-0.6-2.1,0L6.1,7.2c-1.3,1.3-1.3,3.3,0,4.5l5.7,5.7c0.6,0.6,1.5,0.6,2.1,0l5.7-5.7C20.8,10.5,20.8,8.4,19.5,7.2z M12,15.6l-3.9-3.9l1.1-1.1l2.8,2.8l4.9-4.9l1.1,1.1L12,15.6z"/>
-                </g>
-                <text x="70" y="175" class="component-title">Mi Stack Tecnológico</text>
+            <a xlink:href="https://github.com/mathieuz-rdz" target="_blank" class="component-card" style="animation-delay:.4s">
+                 <rect class="component-bg" width="500" height="100" y="120"/><g transform="translate(20, 140)"><path class="component-icon" d="M19.5,7.2L13.8,1.5c-0.6-0.6-1.5-0.6-2.1,0L6.1,7.2c-1.3,1.3-1.3,3.3,0,4.5l5.7,5.7c0.6,0.6,1.5,0.6,2.1,0l5.7-5.7C20.8,10.5,20.8,8.4,19.5,7.2z M12,15.6l-3.9-3.9l1.1-1.1l2.8,2.8l4.9-4.9l1.1,1.1L12,15.6z"/></g>
+                 <text x="70" y="175" class="component-title">Mi Stack Tecnológico</text>
             </a>
-            
-            <!-- COMPONENTE 3: Contacto y Redes -->
-            <a xlink:href="mailto:mathieuz.dev@gmail.com" target="_blank" class="component-card" style="animation-delay: 0.5s;">
-                <rect class="component-bg" width="500" height="100" y="240"/>
-                <g transform="translate(20, 260)">
-                    <path class="component-icon" d="M12,11.7c1.8,0,3.3-1.5,3.3-3.3S13.8,5,12,5s-3.3,1.5-3.3,3.3S10.2,11.7,12,11.7z M12,13.7c-4.4,0-8.3,2.5-8.3,3.3v1.1h16.5v-1.1C20.3,16.2,16.4,13.7,12,13.7z"/>
-                </g>
+            <a xlink:href="mailto:mathieuz.dev@gmail.com" target="_blank" class="component-card" style="animation-delay:.5s">
+                <rect class="component-bg" width="500" height="100" y="240"/><g transform="translate(20, 260)"><path class="component-icon" d="M12,11.7c1.8,0,3.3-1.5,3.3-3.3S13.8,5,12,5s-3.3,1.5-3.3,3.3S10.2,11.7,12,11.7z M12,13.7c-4.4,0-8.3,2.5-8.3,3.3v1.1h16.5v-1.1C20.3,16.2,16.4,13.7,12,13.7z"/></g>
                 <text x="70" y="295" class="component-title">Contacto y Redes Sociales</text>
             </a>
-
         </g>
     </g>
 </svg>
