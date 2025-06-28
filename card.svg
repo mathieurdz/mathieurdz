@@ -1,74 +1,47 @@
-<!-- ===== CONTENIDO PARA EL ARCHIVO profile-card.svg ===== -->
+<!-- ===== CÓDIGO FINAL Y CORRECTO para profile-card.svg ===== -->
 <svg width="800" height="260" viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Mathieuz Rdz's Profile Card</title>
-    <desc>An animated and interactive profile card for GitHub.</desc>
-
     <defs>
         <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#111523"/>
-            <stop offset="100%" stop-color="#0d1117"/>
+            <stop offset="0%" stop-color="#111523"/> <stop offset="100%" stop-color="#0d1117"/>
         </linearGradient>
         <filter id="glow" x="-150%" y="-150%" width="300%" height="300%">
             <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#a855f7" flood-opacity="0.8"/>
         </filter>
-        <clipPath id="avatarClip">
-            <circle cx="120" cy="130" r="60"/>
-        </clipPath>
+        <clipPath id="avatarClip"><circle cx="120" cy="130" r="60"/></clipPath>
     </defs>
-
     <style>
-        /* La etiqueta de estilo SÍ funciona cuando se carga con <object> */
         .card-container { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif; }
-        .name { font-size: 32px; font-weight: 700; fill: #e0e0e0; }
-        .username { font-size: 18px; font-weight: 500; fill: #8b5cf6; }
-        .bio { font-size: 16px; font-weight: 400; fill: #a0aec0; }
-        .social-btn { cursor: pointer; }
+        .name { font-size: 32px; font-weight: 700; fill: #e0e0e0; } .username { font-size: 18px; font-weight: 500; fill: #8b5cf6; }
+        .bio { font-size: 16px; font-weight: 400; fill: #a0aec0; } .social-btn { cursor: pointer; }
         .social-btn g { transition: transform 0.2s ease-out, filter 0.2s ease-out; }
         .social-btn:hover g { transform: translateY(-4px); filter: url(#glow); }
         .btn-bg { fill: #2a2f42; stroke: #4a4f66; stroke-width: 1; rx: 10; transition: fill 0.2s ease-out, stroke 0.2s ease-out; }
         .social-btn:hover .btn-bg { fill: #3c3f59; stroke: #a855f7; }
-        .icon { fill: #cbd5e0; transition: fill 0.2s ease-out; }
-        .social-btn:hover .icon { fill: #ffffff; }
+        .icon { fill: #cbd5e0; transition: fill 0.2s ease-out; } .social-btn:hover .icon { fill: #ffffff; }
     </style>
-
-    <a xlink:href="https://github.com/mathieuz-rdz" target="_blank">
-        <rect width="800" height="260" fill="url(#bg-gradient)" rx="15"/>
-        <rect width="799" height="259" x="0.5" y="0.5" rx="14.5" stroke="#373b4d" stroke-opacity="0.6"/>
-    </a>
-    
+    <rect width="800" height="260" fill="url(#bg-gradient)" rx="15"/>
+    <rect width="799" height="259" x="0.5" y="0.5" rx="14.5" stroke="#373b4d" stroke-opacity="0.6"/>
     <g class="card-container">
         <!-- ==== ¡PERSONALIZA ESTO! ==== -->
-        <!-- 1. CAMBIA LA URL DE TU IMAGEN -->
         <image xlink:href="https://avatars.githubusercontent.com/u/1024025?v=4" width="120" height="120" x="60" y="70" clip-path="url(#avatarClip)"/>
         <circle cx="120" cy="130" r="62" fill="none" stroke="#8b5cf6" stroke-width="2"/>
-        
-        <!-- 2. CAMBIA TUS TEXTOS -->
         <text x="220" y="85" class="name">MATHIEUZ RDZ</text>
         <text x="220" y="115" class="username">@mathieuz-rdz</text>
         <text x="220" y="150" class="bio">Low-Level Code Alchemist | Systems Programmer &amp; Performance Enthusiast.</text>
         <text x="220" y="175" class="bio">Crafting elegant solutions in Silicon.</text>
-
-        <!-- 3. CAMBIA TUS ENLACES DE REDES -->
         <g transform="translate(480, 200)">
             <a xlink:href="https://github.com/mathieuz-rdz" target="_blank" class="social-btn">
-                <g>
-                    <rect class="btn-bg" width="50" height="50"/><path class="icon" transform="translate(13, 13) scale(1.1)" d="M12 0C6.626 0 12 5.373 12 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386C24 5.373 18.627 0 12 0z"/>
-                </g>
+                <g><rect class="btn-bg" width="50" height="50"/><path class="icon" transform="translate(13, 13) scale(1.1)" d="M12 0C6.626 0 12 5.373 12 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386C24 5.373 18.627 0 12 0z"/></g>
             </a>
             <a xlink:href="https://linkedin.com/in/mathieuz-rdz" target="_blank" class="social-btn">
-                <g transform="translate(65, 0)">
-                    <rect class="btn-bg" width="50" height="50"/><path class="icon" transform="translate(13, 13)" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764S7.466 6.732 6.5 6.732zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </g>
+                <g transform="translate(65, 0)"><rect class="btn-bg" width="50" height="50"/><path class="icon" transform="translate(13, 13)" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764S7.466 6.732 6.5 6.732zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></g>
             </a>
             <a xlink:href="https://twitter.com/mathieuz_rdz" target="_blank" class="social-btn">
-                <g transform="translate(130, 0)">
-                    <rect class="btn-bg" width="50" height="50"/><path class="icon" transform="translate(13, 13)" d="m18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.62l-5.21-6.817L4.99 21.75H1.68l7.73-8.835L1 2.25h6.784l4.72 6.23zM17.06 19.75h1.693L7.045 4.125H5.21l11.85 15.625z"/>
-                </g>
+                <g transform="translate(130, 0)"><rect class="btn-bg" width="50" height="50"/><path class="icon" transform="translate(13, 13)" d="m18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.62l-5.21-6.817L4.99 21.75H1.68l7.73-8.835L1 2.25h6.784l4.72 6.23zM17.06 19.75h1.693L7.045 4.125H5.21l11.85 15.625z"/></g>
             </a>
             <a xlink:href="mailto:mathieuz.dev@gmail.com" target="_blank" class="social-btn">
-                <g transform="translate(195, 0)">
-                    <rect class="btn-bg" width="50" height="50"/><path class="icon" transform="translate(13, 13)" d="M0 3v18h24V3H0zm6.623 7.929l-6.623 5.712V5.541l6.623 3.746zm-4.141-5.929h19.035L12 10.428 2.482 2zM14.188 12.188l3.824 3.099 5.612 4.817H0.375l5.513-4.812 3.824-3.099L12 13.828l2.188-1.64zm-.98-1.264l6.618-5.69v9.45l-6.618-3.76z"/>
-                </g>
+                <g transform="translate(195, 0)"><rect class="btn-bg" width="50" height="50"/><path class="icon" transform="translate(13, 13)" d="M0 3v18h24V3H0zm6.623 7.929l-6.623 5.712V5.541l6.623 3.746zm-4.141-5.929h19.035L12 10.428 2.482 2zM14.188 12.188l3.824 3.099 5.612 4.817H0.375l5.513-4.812 3.824-3.099L12 13.828l2.188-1.64zm-.98-1.264l6.618-5.69v9.45l-6.618-3.76z"/></g>
             </a>
         </g>
     </g>
