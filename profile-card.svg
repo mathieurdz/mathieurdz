@@ -1,38 +1,143 @@
-<!-- ===== CÓDIGO FINAL para profile-card.svg ===== -->
-<svg width="850" height="420" viewBox="0 0 850 420" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Mathieuz Rdz's Interactive Profile</title>
+<!-- ===== NUEVO DISEÑO: HUB INTERACTIVO Y FONDO ANIMADO ===== -->
+<svg width="850" height="400" viewBox="0 0 850 400" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Mathieuz Rdz - Interactive HUB</title>
     <defs>
-        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#101219"/><stop offset="100%" stop-color="#0d1117"/></linearGradient>
-        <filter id="glow" x="-150%" y="-150%" width="300%" height="300%"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#39ff14" flood-opacity="0.8"/></filter>
-        <clipPath id="avatarClip"><circle cx="150" cy="130" r="70"/></clipPath>
-        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(128,128,128,0.1)" stroke-width="1"/></pattern>
+        <!-- Filtro de resplandor verde neón para la interacción -->
+        <filter id="neon-glow" x="-150%" y="-150%" width="300%" height="300%">
+            <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#39ff14" flood-opacity="0.9"/>
+        </filter>
+        <!-- Patrón de rejilla para el fondo -->
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(57, 255, 20, 0.1)" stroke-width="1"/>
+        </pattern>
+        <!-- Máscara hexagonal para el avatar -->
+        <clipPath id="hexClip">
+            <path d="M 125, 30 L 75, 30 L 50, 75 L 75, 120 L 125, 120 L 150, 75 Z"/>
+        </clipPath>
     </defs>
-    <style>@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}.container{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,sans-serif;animation:fadeIn .8s ease-out}.profile-name{font:600 34px sans-serif;fill:#e5e7eb;animation:slideUp .6s ease-out forwards}.profile-username{font:500 20px sans-serif;fill:#8b5cf6;animation:slideUp .7s ease-out forwards}.profile-bio{font:400 15px sans-serif;fill:#a0aec0}.bio-line{animation:slideUp .8s ease-out forwards}.component-card{cursor:pointer;animation:slideUp .5s ease-out forwards;opacity:0}.component-bg{fill:#171c2c;stroke:#373b4d;stroke-width:1;rx:10;transition:all .3s ease}.component-card:hover .component-bg{transform:translateY(-5px);stroke:#39ff14;filter:url(#glow)}.component-title{font:600 18px sans-serif;fill:#cdd6f4;transition:fill .3s ease}.component-card:hover .component-title{fill:#39ff14}.component-icon{fill:#8b5cf6;transition:all .3s ease}.component-card:hover .component-icon{fill:#39ff14;transform:scale(1.1) rotate(-5deg)}</style>
-    <rect width="850" height="420" fill="url(#bg-gradient)" rx="15"/><rect width="850" height="420" fill="url(#grid)" rx="15"/><rect width="849" height="419" x=".5" y=".5" rx="14.5" fill="none" stroke="#373b4d" stroke-opacity=".5"/>
-    <g class="container">
-        <g id="profile-section">
-            <!-- 1. CAMBIA LA URL DE TU AVATAR -->
-            <image xlink:href="https://avatars.githubusercontent.com/u/1024025?v=4" width="140" height="140" x="80" y="60" clip-path="url(#avatarClip)"/>
-            <circle cx="150" cy="130" r="72" fill="none" stroke="#8b5cf6" stroke-width="2" style="animation:fadeIn 1.2s ease-out forwards"/>
-            <!-- 2. CAMBIA TUS TEXTOS PERSONALES -->
-            <text x="50" y="260" class="profile-name">MATHIEUZ RDZ</text><text x="50" y="290" class="profile-username">@mathieuz-rdz</text>
-            <text x="50" y="325" class="profile-bio bio-line" style="animation-delay:.1s">Low-Level Code Alchemist &amp; Enthusiast.</text>
-            <text x="50" y="345" class="profile-bio bio-line" style="animation-delay:.2s">Transforming caffeine into elegant code.</text>
-        </g>
-        <g id="components-section" transform="translate(320, 50)">
-            <!-- 3. CAMBIA TUS ENLACES Y TEXTOS -->
-            <a xlink:href="https://github.com/mathieuz-rdz?tab=repositories" target="_blank" class="component-card" style="animation-delay:.3s">
-                <rect class="component-bg" width="500" height="100" y="0"/><g transform="translate(20, 20)"><path class="component-icon" d="M3.9,19.8h16.2c0.6,0,1.2-0.5,1.2-1.2V7.7c0-0.6-0.5-1.2-1.2-1.2H3.9c-0.6,0-1.2,0.5-1.2,1.2v10.9C2.7,19.2,3.2,19.8,3.9,19.8z M9,3.5L7.9,4.8H3.9C3.2,4.8,2.7,5.4,2.7,6v0.5h18.6V6c0-0.6-0.5-1.2-1.2-1.2h-4L15,3.5H9z"/></g>
-                <text x="70" y="55" class="component-title">Proyectos Destacados</text>
-            </a>
-            <a xlink:href="https://github.com/mathieuz-rdz" target="_blank" class="component-card" style="animation-delay:.4s">
-                 <rect class="component-bg" width="500" height="100" y="120"/><g transform="translate(20, 140)"><path class="component-icon" d="M19.5,7.2L13.8,1.5c-0.6-0.6-1.5-0.6-2.1,0L6.1,7.2c-1.3,1.3-1.3,3.3,0,4.5l5.7,5.7c0.6,0.6,1.5,0.6,2.1,0l5.7-5.7C20.8,10.5,20.8,8.4,19.5,7.2z M12,15.6l-3.9-3.9l1.1-1.1l2.8,2.8l4.9-4.9l1.1,1.1L12,15.6z"/></g>
-                 <text x="70" y="175" class="component-title">Mi Stack Tecnológico</text>
-            </a>
-            <a xlink:href="mailto:mathieuz.dev@gmail.com" target="_blank" class="component-card" style="animation-delay:.5s">
-                <rect class="component-bg" width="500" height="100" y="240"/><g transform="translate(20, 260)"><path class="component-icon" d="M12,11.7c1.8,0,3.3-1.5,3.3-3.3S13.8,5,12,5s-3.3,1.5-3.3,3.3S10.2,11.7,12,11.7z M12,13.7c-4.4,0-8.3,2.5-8.3,3.3v1.1h16.5v-1.1C20.3,16.2,16.4,13.7,12,13.7z"/></g>
-                <text x="70" y="295" class="component-title">Contacto y Redes Sociales</text>
-            </a>
-        </g>
+
+    <style>
+        /* Animación para el fondo de rejilla en movimiento */
+        @keyframes scroll-grid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-40px, -40px); }
+        }
+        .grid-background {
+            animation: scroll-grid 4s linear infinite;
+        }
+
+        /* --- HUB DE INTERACCIÓN SUPERIOR --- */
+        .satellite .bg {
+            stroke: #8b5cf6; stroke-width: 1.5; fill: rgba(23, 28, 44, 0.7);
+            transition: all 0.3s ease-in-out;
+        }
+        .satellite .icon {
+            fill: #a0aec0; transition: fill 0.3s ease-in-out;
+        }
+        .satellite .connection-line {
+            stroke: #39ff14; stroke-width: 1; opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .central-avatar-border {
+            stroke: #8b5cf6; stroke-width: 2.5; fill: none;
+            transition: filter 0.3s ease;
+        }
+        /* Efectos HOVER */
+        .satellite:hover .bg {
+            stroke: #39ff14; transform: scale(1.1);
+        }
+        .satellite:hover .icon {
+            fill: #ffffff;
+        }
+        .satellite:hover ~ .central-avatar-border,
+        .satellite:hover .connection-line {
+            opacity: 1; filter: url(#neon-glow);
+        }
+        
+        /* --- BARRA INFERIOR --- */
+        .bottom-bar { fill: rgba(13, 17, 23, 0.7); backdrop-filter: blur(5px); }
+        .name-text { font: 600 28px sans-serif; fill: #e5e7eb; }
+        .title-text { font: 400 16px sans-serif; fill: #8b5cf6; }
+        /* Animación de máquina de escribir */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #39ff14; }
+        }
+        .typing-text {
+            font: 500 14px 'Fira Code', 'Courier New', monospace; fill: #a0aec0;
+            overflow: hidden; white-space: nowrap;
+            border-right: .15em solid #39ff14;
+            width: 32ch; /* Número de caracteres a mostrar */
+            animation: typing 3s steps(32, end) infinite, blink-caret .75s step-end infinite;
+        }
+    </style>
+
+    <!-- Fondo Principal (Oscuro) y Rejilla animada -->
+    <rect width="100%" height="100%" fill="#0d1117" />
+    <rect width="110%" height="110%" x="-5%" y="-5%" fill="url(#grid)" class="grid-background" />
+
+    <!-- ======================================= -->
+    <!--     HUB DE INTERACCIÓN SUPERIOR         -->
+    <!-- ======================================= -->
+    <g transform="translate(325, 60)">
+        <!-- 1. CAMBIA AQUÍ LA URL DE TU AVATAR -->
+        <image xlink:href="https://avatars.githubusercontent.com/u/1024025?v=4" x="50" y="30" height="90" width="90" clip-path="url(#hexClip)" />
+        
+        <!-- SATÉLITES DE REDES SOCIALES (ENLACES INTERACTIVOS) -->
+        <!-- 2. CAMBIA AQUÍ TUS ENLACES Y LOS ICONOS SI QUIERES -->
+        
+        <!-- SATÉLITE 1: GitHub -->
+        <a xlink:href="https://github.com/mathieuz-rdz" target="_blank" class="satellite">
+            <line class="connection-line" x1="100" y1="75" x2="35" y2="35" />
+            <g transform="translate(0, 0)">
+                <path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <path class="icon" transform="translate(5, 7) scale(0.8)" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C22.562 19.81 24 16.225 24 12 24 5.373 18.627 0 12 0z"/>
+            </g>
+        </a>
+        <!-- SATÉLITE 2: LinkedIn -->
+        <a xlink:href="https://linkedin.com/in/mathieuz-rdz" target="_blank" class="satellite">
+            <line class="connection-line" x1="100" y1="75" x2="35" y2="115" />
+            <g transform="translate(0, 80)">
+                <path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <path class="icon" transform="translate(5, 7) scale(0.8)" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764S7.466 6.732 6.5 6.732zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </g>
+        </a>
+        <!-- SATÉLITE 3: Twitter/X -->
+        <a xlink:href="https://twitter.com/mathieuz_rdz" target="_blank" class="satellite">
+            <line class="connection-line" x1="100" y1="75" x2="165" y2="35" />
+            <g transform="translate(130, 0)">
+                <path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <path class="icon" transform="translate(5, 7) scale(0.8)" d="m18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.62l-5.21-6.817L4.99 21.75H1.68l7.73-8.835L1 2.25h6.784l4.72 6.23zM17.06 19.75h1.693L7.045 4.125H5.21l11.85 15.625z"/>
+            </g>
+        </a>
+        <!-- SATÉLITE 4: Mail -->
+        <a xlink:href="mailto:mathieuz.dev@gmail.com" target="_blank" class="satellite">
+            <line class="connection-line" x1="100" y1="75" x2="165" y2="115" />
+            <g transform="translate(130, 80)">
+                <path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <path class="icon" transform="translate(5, 7) scale(0.8)" d="M0 3v18h24V3H0zm21.518 2L12 10.428 2.482 5h19.036zM2 19V6.253l10 7.773 10-7.773V19H2z"/>
+            </g>
+        </a>
+
+        <!-- Borde del Avatar Central -->
+        <path class="central-avatar-border" d="M 125, 30 L 75, 30 L 50, 75 L 75, 120 L 125, 120 L 150, 75 Z"/>
+    </g>
+
+    <!-- ======================================= -->
+    <!--         BARRA DE INFO INFERIOR          -->
+    <!-- ======================================= -->
+    <g transform="translate(40, 300)">
+        <rect class="bottom-bar" width="770" height="80" rx="10" />
+        <text x="20" y="35" class="name-text">MATHIEUZ RDZ</text>
+        <text x="20" y="60" class="title-text">Low-Level Code Alchemist & Systems Programmer</text>
+        
+        <!-- 3. CAMBIA AQUÍ LA FRASE QUE SE ESCRIBE -->
+        <foreignObject x="430" y="42" width="320" height="25">
+             <p xmlns="http://www.w3.org/1999/xhtml" class="typing-text">SYSTEM_STATUS: ALL GREEN</p>
+        </foreignObject>
     </g>
 </svg>
