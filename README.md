@@ -1,3 +1,3 @@
 <p align="center">
-  <img src="/card.svg)" alt="Mathieuz Rdz's GitHub Profile Card" />
-</p>C
+<object type="image/svg+xml" data="https://raw.githubusercontent.com/mathieuz-rdz/mathieuz-rdz/main/profile-card.svg"></object>
+</p>
