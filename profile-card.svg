@@ -60,7 +60,7 @@
     <g transform="translate(40, 300)">
         <rect class="bottom-bar" width="770" height="80" rx="10" />
         <text x="20" y="35" class="name-text">MATHIEUZ RDZ</text>
-        <text x="20" y="60" class="title-text">Low-Level Code Alchemist &amp; Systems Programmer</text>
+        <text x="20" y="60" class="title-text">Building Things; Systems Programmer</text>
         <!-- CORREGIDO: Se reemplaza foreignObject por un <text> estándar -->
         <text x="430" y="55" class="status-text">> SYSTEM_STATUS: ALL_GREEN_</text>
     </g>
