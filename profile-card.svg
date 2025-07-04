@@ -1,4 +1,4 @@
-<!-- ===== CÓDIGO CORREGIDO Y 100% FUNCIONAL (POSICIÓN AJUSTADA) ===== -->
+<!-- ===== CÓDIGO FINAL CORREGIDO Y 100% FUNCIONAL ===== -->
 <svg width="850" height="400" viewBox="0 0 850 400" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Developer Hub</title>
     <defs>
@@ -18,36 +18,20 @@
             0% { transform: translate(0, 0); }
             100% { transform: translate(-40px, -40px); }
         }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(0.8); opacity: 0.7; }
-            50% { transform: scale(1.1); opacity: 1; }
-        }
-        @keyframes line-draw {
-            from { stroke-dashoffset: 24; }
-            to { stroke-dashoffset: 0; }
-        }
         
         .grid-background { animation: scroll-grid 3s linear infinite; }
         .satellite .bg { stroke: #8b5cf6; stroke-width: 1.5; fill: rgba(23, 28, 44, 0.7); transition: all 0.3s ease-in-out; }
-        .satellite .figure { stroke: #a0aec0; transition: all 0.3s ease-in-out; }
+        .satellite .figure { stroke: #a0aec0; fill: none; transition: all 0.3s ease-in-out; }
         .satellite .figure-fill { fill: #a0aec0; transition: all 0.3s ease-in-out; }
         .satellite .connection-line { stroke: #8b5cf6; stroke-width: 1; opacity: 0; transition: opacity 0.3s ease-in-out; }
         
         .central-avatar-border { stroke: #8b5cf6; stroke-width: 2.5; fill: none; transition: filter 0.3s ease; }
         
         .satellite:hover .bg { stroke: #a78bfa; transform: scale(1.1); }
-        .satellite:hover .figure, .satellite:hover .figure-fill { stroke: #ffffff; fill: #ffffff; transform: scale(1.1); }
+        .satellite:hover .figure { stroke: #ffffff; transform: scale(1.1); }
+        .satellite:hover .figure-fill { fill: #ffffff; transform: scale(1.1); }
         .satellite:hover ~ .central-avatar-border,
         .satellite:hover .connection-line { opacity: 1; filter: url(#neon-glow); }
-
-        .animated-figure-1 { animation: rotate 8s linear infinite; }
-        .animated-figure-2 { animation: pulse 2.5s ease-in-out infinite; }
-        .animated-figure-3 { animation: rotate 6s linear infinite reverse; }
-        .animated-figure-4 { animation: line-draw 4s ease-in-out infinite alternate; stroke-dasharray: 24; }
 
         .bottom-bar { fill: rgba(13, 17, 23, 0.7); }
         .name-text { font: 600 28px sans-serif; fill: #e5e7eb; }
@@ -59,29 +43,33 @@
     <rect width="110%" height="110%" x="-5%" y="-5%" fill="url(#grid)" class="grid-background" />
 
     <g transform="translate(325, 60)">
-        <!-- 1. CAMBIA LA URL DE TU AVATAR -->
-        <image xlink:href="https://avatars.githubusercontent.com/u/1024025?v=4" x="50" y="30" height="90" width="90" clip-path="url(#hexClip)" />
+        <!-- 1. CAMBIA LA URL DE TU AVATAR SI LO DESEAS -->
+        <image xlink:href="https://raw.githubusercontent.com/user-attachments/assets/53a8a3a7-e9a6-4a94-9844-42f04269e96f" x="50" y="30" height="90" width="90" clip-path="url(#hexClip)" />
         
-        <!-- Sección de figuras animadas -->
+        <!-- Sección de figuras estáticas -->
         <g class="satellite">
             <line class="connection-line" x1="100" y1="75" x2="35" y2="35" /><g transform="translate(0, 0)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
-                <rect x="7.5" y="10" width="15" height="15" rx="2" class="figure animated-figure-1" stroke-width="1.5" fill="none" transform-origin="15 17.3"/>
+                <!-- FIGURA: Rombo -->
+                <rect x="7.5" y="10" width="15" height="15" class="figure" stroke-width="2" transform="rotate(45 15 17.3)"/>
             </g>
         </g>
         <g class="satellite">
             <line class="connection-line" x1="100" y1="75" x2="35" y2="115" /><g transform="translate(0, 80)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
-                <circle cx="15" cy="17.3" r="8" class="figure-fill animated-figure-2" transform-origin="15 17.3"/>
+                <!-- FIGURA: Círculo sólido -->
+                <circle cx="15" cy="17.3" r="5" class="figure-fill"/>
             </g>
         </g>
-        <!-- CORREGIDO: Se ajusta la posición de las figuras de la derecha -->
+        <!-- CORREGIDO: Posición movida hacia afuera -->
         <g class="satellite">
-            <line class="connection-line" x1="100" y1="75" x2="145" y2="35" /><g transform="translate(110, 0)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
-                <path d="M 15,7.3 L 21.3,27.3 L 8.7,27.3 Z" class="figure animated-figure-3" stroke-width="1.5" fill="none" transform-origin="15 17.3"/>
+            <line class="connection-line" x1="100" y1="75" x2="165" y2="35" /><g transform="translate(130, 0)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <!-- FIGURA: Triángulo -->
+                <path d="M 10 23 L 23 17.3 L 10 11.6 Z" class="figure" stroke-width="2"/>
             </g>
         </g>
         <g class="satellite">
-            <line class="connection-line" x1="100" y1="75" x2="145" y2="115" /><g transform="translate(110, 80)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
-                <path d="M 7,17.3 H 23 M 15,9.3 V 25.3" class="figure animated-figure-4" stroke-width="2" stroke-linecap="round"/>
+            <line class="connection-line" x1="100" y1="75" x2="165" y2="115" /><g transform="translate(130, 80)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+                <!-- FIGURA: Signo de más -->
+                <path d="M 7,17.3 H 23 M 15,9.3 V 25.3" class="figure" stroke-width="2" stroke-linecap="round"/>
             </g>
         </g>
         <path class="central-avatar-border" d="M 125, 30 L 75, 30 L 50, 75 L 75, 120 L 125, 120 L 150, 75 Z"/>
