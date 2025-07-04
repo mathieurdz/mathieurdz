@@ -1,4 +1,4 @@
-<!-- ===== CÓDIGO MEJORADO CON FIGURAS ANIMADAS Y 100% FUNCIONAL ===== -->
+<!-- ===== CÓDIGO CORREGIDO Y 100% FUNCIONAL (POSICIÓN AJUSTADA) ===== -->
 <svg width="850" height="400" viewBox="0 0 850 400" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Developer Hub</title>
     <defs>
@@ -73,13 +73,14 @@
                 <circle cx="15" cy="17.3" r="8" class="figure-fill animated-figure-2" transform-origin="15 17.3"/>
             </g>
         </g>
+        <!-- CORREGIDO: Se ajusta la posición de las figuras de la derecha -->
         <g class="satellite">
-            <line class="connection-line" x1="100" y1="75" x2="165" y2="35" /><g transform="translate(130, 0)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+            <line class="connection-line" x1="100" y1="75" x2="145" y2="35" /><g transform="translate(110, 0)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
                 <path d="M 15,7.3 L 21.3,27.3 L 8.7,27.3 Z" class="figure animated-figure-3" stroke-width="1.5" fill="none" transform-origin="15 17.3"/>
             </g>
         </g>
         <g class="satellite">
-            <line class="connection-line" x1="100" y1="75" x2="165" y2="115" /><g transform="translate(130, 80)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
+            <line class="connection-line" x1="100" y1="75" x2="145" y2="115" /><g transform="translate(110, 80)"><path class="bg" d="M 25,0 L 5,0 L -5,17.3 L 5,34.6 L 25,34.6 L 35,17.3 Z" />
                 <path d="M 7,17.3 H 23 M 15,9.3 V 25.3" class="figure animated-figure-4" stroke-width="2" stroke-linecap="round"/>
             </g>
         </g>
